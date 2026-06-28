@@ -3,15 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>ユーザー一覧</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; line-height: 1.6; }
+    form { background: #f4f4f4; padding: 20px; border-radius: 8px; }
+    input { padding: 8px; margin-right: 10px; }
+    button { padding: 8px 16px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+    ul { list-style: none; padding: 0; }
+    li { background: #fff; border-bottom: 1px solid #ddd; padding: 10px 0; }
+  </style>
 </head>
 <body>
-  <h1>ユーザー一覧</h1>
+  <h1>👥 ユーザー一覧</h1>
   <ul>
+    <% if (users.length === 0) { %>
+      <li>まだユーザーはいません。</li>
+    <% } %>
     <% users.forEach(user => { %>
-      <li><%= user.name %></li>
+      <li>
+        <strong><%= user.name %></strong> 
+        <span>(<%= user.age ? user.age + ' 歳' : '年齢不明' %>)</span>
+      </li>
     <% }) %>
   </ul>
 
-  <h2>ユーザー追加</h2>
+  <hr>
+
+  <h2>➕ ユーザー追加</h2>
   <form action="/users" method="post">
-    <input type="text" name="name"
+    <div>
+      <label>名前: <input type="text" name="name" placeholder="例: ひつじ仙人" required></label>
+      <label>年齢: <input type="number" name="age" placeholder="20"></label>
+      <button type="submit">追加する</button>
+    </div>
+  </form>
+</body>
+</html>
