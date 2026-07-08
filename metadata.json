@@ -1,0 +1,6 @@
+{
+  "name": "傾斜割り勘電卓",
+  "description": "メンバーの役職、飲酒の有無に応じてスマートに傾斜配分できる割り勘計算ツール。100円単位の丸め処理と幹事の取り分（余り）の自動算出に対応しています。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
